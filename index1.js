@@ -5,18 +5,9 @@ const app = express();  // server
 
 const Post = require('./models/post');
 
-// middleware format
-app.use((req,res,next) => {
-    console.log(`got a request: ${req.path}`); //  ${REQ.PATH}`
-    next();
-});
-
-app.use(express.static('public'));  // folder named public has files to be served
-// for static data
-
 // 
 app.get('/', (req,res) => {
-    console.log(`yep got a get request: ${req.path}`);
+    console.log('yep got a get request');
     // res.send('Hey builders!');
     // Post.findAll()      // returns a promise
     Post.findOne({
